@@ -48,6 +48,7 @@ class RenameInFolder:
         temp = read_yaml(os.path.abspath("."))
         old_file = f'{self.current_dir}\\{file}'
         new_filename = temp[0]["FGR"].pop(0)
+        new_filename.replace('/', '_')
         new_file = f'{self.current_dir}\\{new_filename}.{old_file_list[-1]}'
         try:
             os.rename(old_file, new_file)
